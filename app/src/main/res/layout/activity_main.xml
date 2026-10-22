@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tab_selected"
+        app:tabIndicatorColor="@color/primary_dark"
+        app:tabSelectedTextColor="@color/ink"
+        app:tabTextColor="#8D6E63"
+        xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/postit">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="6dp"
+            android:paddingBottom="80dp" />
+
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/empty"
+            android:textColor="#8D6E63"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="12dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_mic"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/button_round"
+                android:contentDescription="Dictar tarea"
+                android:src="@drawable/ic_mic" />
+
+            <ImageButton
+                android:id="@+id/btn_add"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/button_round"
+                android:contentDescription="Nueva tarea"
+                android:src="@drawable/ic_add" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_widget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Poner el post-it en la pantalla de inicio"
+        android:textAllCaps="false"
+        android:textColor="@color/ink" />
+</LinearLayout>

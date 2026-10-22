@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Arrastra el dedo sobre la rejilla para elegir cuántos iconos ocupa el post-it (columnas x filas). Tamaños: 2x2, 2x3, 3x2, 3x3 y 3x4."
+        android:textColor="@color/ink"
+        android:textSize="15sp" />
+
+    <com.notasapp.GridPickerView
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp" />
+
+    <TextView
+        android:id="@+id/size_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:textColor="@color/ink"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_place"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Colocar en la pantalla de inicio"
+        android:textAllCaps="false"
+        android:textColor="@color/ink" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Android deja que el lanzador elija el hueco libre. Si no queda arriba a la derecha, mantén pulsado el post-it y arrástralo a esa esquina."
+        android:textColor="#8D6E63"
+        android:textSize="13sp" />
+</LinearLayout>

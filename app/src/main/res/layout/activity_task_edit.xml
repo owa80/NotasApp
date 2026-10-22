@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/postit"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nueva tarea"
+        android:textColor="@color/ink"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Escribe la tarea"
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLines="5"
+            android:textColor="@color/ink" />
+
+        <ImageButton
+            android:id="@+id/btn_mic"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/button_round"
+            android:contentDescription="Dictar tarea"
+            android:src="@drawable/ic_mic" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/FormLabel"
+        android:text="Prioridad" />
+
+    <RadioGroup
+        android:id="@+id/priority_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton android:id="@+id/prio_high" style="@style/FormChoice" android:text="Alta" />
+        <RadioButton android:id="@+id/prio_medium" style="@style/FormChoice" android:text="Media" />
+        <RadioButton android:id="@+id/prio_low" style="@style/FormChoice" android:text="Baja" />
+    </RadioGroup>
+
+    <TextView
+        style="@style/FormLabel"
+        android:text="Pestaña" />
+
+    <RadioGroup
+        android:id="@+id/tab_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton android:id="@+id/tab_work" style="@style/FormChoice" android:text="Trabajo" />
+        <RadioButton android:id="@+id/tab_personal" style="@style/FormChoice" android:text="Personal" />
+        <RadioButton android:id="@+id/tab_other" style="@style/FormChoice" android:text="Otros" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:textColor="@color/ink" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Guardar"
+            android:textColor="@color/ink" />
+    </LinearLayout>
+</LinearLayout>

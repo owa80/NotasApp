@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NotasApp</string>
+    <string name="widget_description">Post-it de tareas pendientes con pestañas Trabajo, Personal y Otros</string>
+    <string name="empty">Sin tareas.\nPulsa + o el micrófono.</string>
+</resources>
