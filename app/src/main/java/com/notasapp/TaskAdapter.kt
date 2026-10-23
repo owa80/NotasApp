@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 class TaskAdapter(
     private val onClick: (Task) -> Unit,
     private val onToggle: (Task) -> Unit,
+    private val onDelete: (Task) -> Unit,
     private val onStartDrag: (RecyclerView.ViewHolder) -> Unit
 ) : RecyclerView.Adapter<TaskAdapter.Holder>() {
 
@@ -44,6 +45,7 @@ class TaskAdapter(
         holder.check.setImageResource(if (task.done) R.drawable.ic_check_on else R.drawable.ic_check_off)
         holder.itemView.setOnClickListener { onClick(task) }
         holder.check.setOnClickListener { onToggle(task) }
+        holder.delete.setOnClickListener { onDelete(task) }
         holder.handle.setOnTouchListener { _, event ->
             if (event.actionMasked == MotionEvent.ACTION_DOWN) onStartDrag(holder)
             false
@@ -55,5 +57,6 @@ class TaskAdapter(
         val dot: ImageView = view.findViewById(R.id.dot)
         val text: TextView = view.findViewById(R.id.text)
         val check: ImageView = view.findViewById(R.id.check)
+        val delete: ImageView = view.findViewById(R.id.delete)
     }
 }

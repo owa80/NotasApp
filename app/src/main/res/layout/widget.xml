@@ -14,19 +14,19 @@
         <TextView
             android:id="@+id/tab0"
             style="@style/WidgetTab"
-            android:text="Trabajo" />
+            android:text="Traballo" />
 
         <TextView
             android:id="@+id/tab1"
             style="@style/WidgetTab"
             android:layout_marginStart="2dp"
-            android:text="Personal" />
+            android:text="Persoal" />
 
         <TextView
             android:id="@+id/tab2"
             style="@style/WidgetTab"
             android:layout_marginStart="2dp"
-            android:text="Otros" />
+            android:text="Outros" />
     </LinearLayout>
 
     <FrameLayout
@@ -70,7 +70,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:background="@drawable/button_round"
-                android:contentDescription="Dictar tarea"
+                android:contentDescription="Ditar tarefa"
                 android:padding="5dp"
                 android:src="@drawable/ic_mic" />
 
@@ -80,7 +80,7 @@
                 android:layout_height="30dp"
                 android:layout_marginStart="6dp"
                 android:background="@drawable/button_round"
-                android:contentDescription="Nueva tarea"
+                android:contentDescription="Nova tarefa"
                 android:padding="5dp"
                 android:src="@drawable/ic_add" />
         </LinearLayout>

@@ -51,7 +51,7 @@
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:background="@drawable/button_round"
-                android:contentDescription="Dictar tarea"
+                android:contentDescription="Ditar tarefa"
                 android:src="@drawable/ic_mic" />
 
             <ImageButton
@@ -60,7 +60,7 @@
                 android:layout_height="56dp"
                 android:layout_marginStart="12dp"
                 android:background="@drawable/button_round"
-                android:contentDescription="Nueva tarea"
+                android:contentDescription="Nova tarefa"
                 android:src="@drawable/ic_add" />
         </LinearLayout>
     </FrameLayout>
@@ -70,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Poner el post-it en la pantalla de inicio"
+        android:text="Poñer o pósit na pantalla de inicio"
         android:textAllCaps="false"
         android:textColor="@color/ink" />
 </LinearLayout>

@@ -6,10 +6,10 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
 // Pestañas del post-it: 0 = Trabajo, 1 = Personal, 2 = Otros.
-val TAB_NAMES = listOf("Trabajo", "Personal", "Otros")
+val TAB_NAMES = listOf("Traballo", "Persoal", "Outros")
 
 // Prioridades de mayor a menor: 0 = alta (rojo), 1 = media (amarillo), 2 = baja (verde).
-val PRIORITY_NAMES = listOf("Alta (rojo)", "Media (amarillo)", "Baja (verde)")
+val PRIORITY_NAMES = listOf("Alta (vermello)", "Media (amarelo)", "Baixa (verde)")
 val PRIORITY_COLORS = intArrayOf(0xFFE53935.toInt(), 0xFFFFA000.toInt(), 0xFF43A047.toInt())
 
 data class Task(
@@ -93,6 +93,10 @@ class Db private constructor(context: Context) :
 
     fun delete(id: Long) {
         writableDatabase.delete("tasks", "id = ?", arrayOf(id.toString()))
+    }
+
+    fun deleteDone(tab: Int) {
+        writableDatabase.delete("tasks", "tab = ? AND done = 1", arrayOf(tab.toString()))
     }
 
     // Sube (delta = -1) o baja (delta = 1) una tarea un puesto dentro de su pestaña.

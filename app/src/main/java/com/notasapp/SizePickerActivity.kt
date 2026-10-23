@@ -16,7 +16,7 @@ class SizePickerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_size_picker)
-        title = "Tamaño del widget"
+        title = "Tamaño do widget"
 
         val grid = findViewById<GridPickerView>(R.id.grid)
         val label = findViewById<TextView>(R.id.size_label)
@@ -24,7 +24,7 @@ class SizePickerActivity : AppCompatActivity() {
 
         fun show(columns: Int, rows: Int) {
             val available = Widgets.SIZES.containsKey(columns to rows)
-            label.text = if (available) "$columns x $rows" else "$columns x $rows (no disponible)"
+            label.text = if (available) "$columns x $rows" else "$columns x $rows (non dispoñible)"
             place.isEnabled = available
         }
         grid.onChange = ::show
@@ -38,13 +38,13 @@ class SizePickerActivity : AppCompatActivity() {
         val manager = AppWidgetManager.getInstance(this)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && manager.isRequestPinAppWidgetSupported) {
             manager.requestPinAppWidget(ComponentName(this, cls), null, null)
-            Toast.makeText(this, "Confirma para añadir el post-it $columns x $rows", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Confirma para engadir o pósit $columns x $rows", Toast.LENGTH_LONG).show()
         } else {
             AlertDialog.Builder(this)
-                .setTitle("Añadir el widget")
+                .setTitle("Engadir o widget")
                 .setMessage(
-                    "Mantén pulsado un hueco libre de la pantalla de inicio, entra en Widgets, " +
-                        "busca NotasApp y arrastra \"Notas $columns x $rows\" a la esquina superior derecha."
+                    "Mantén premido un oco libre da pantalla de inicio, entra en Widgets, " +
+                        "busca NotasApp e arrastra \"Notas $columns x $rows\" á esquina superior dereita."
                 )
                 .setPositiveButton("Entendido", null)
                 .show()

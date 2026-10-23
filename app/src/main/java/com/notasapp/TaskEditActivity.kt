@@ -53,13 +53,13 @@ class TaskEditActivity : AppCompatActivity() {
         val title = findViewById<TextView>(R.id.title)
         if (savedInstanceState == null) {
             if (task != null) {
-                title.text = "Editar tarea"
+                title.text = "Editar tarefa"
                 input.setText(task.text)
                 input.setSelection(task.text.length)
                 priorityGroup.check(priorityIds[task.priority])
                 tabGroup.check(tabIds[task.tab])
             } else {
-                title.text = "Nueva tarea"
+                title.text = "Nova tarefa"
                 priorityGroup.check(R.id.prio_medium)
                 tabGroup.check(tabIds[intent.getIntExtra(EXTRA_TAB, 0).coerceIn(0, 2)])
             }
@@ -75,19 +75,19 @@ class TaskEditActivity : AppCompatActivity() {
     private fun listen() {
         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
             .putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
-            .putExtra(RecognizerIntent.EXTRA_LANGUAGE, "es-ES")
-            .putExtra(RecognizerIntent.EXTRA_PROMPT, "Dicta la tarea")
+            .putExtra(RecognizerIntent.EXTRA_LANGUAGE, "gl-ES")
+            .putExtra(RecognizerIntent.EXTRA_PROMPT, "Dita a tarefa")
         try {
             speech.launch(intent)
         } catch (e: ActivityNotFoundException) {
-            Toast.makeText(this, "Este móvil no tiene reconocimiento de voz", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Este móbil non ten recoñecemento de voz", Toast.LENGTH_LONG).show()
         }
     }
 
     private fun save() {
         val text = input.text.toString().trim()
         if (text.isEmpty()) {
-            Toast.makeText(this, "Escribe o dicta la tarea", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Escribe ou dita a tarefa", Toast.LENGTH_SHORT).show()
             return
         }
         val priority = priorityIds.indexOf(priorityGroup.checkedRadioButtonId).coerceAtLeast(0)

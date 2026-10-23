@@ -21,7 +21,11 @@ class TaskActionActivity : AppCompatActivity() {
             return
         }
         if (savedInstanceState == null) {
-            TaskActions.show(this, task, onChanged = {}, onClosed = { finish() })
+            if (intent.getStringExtra(Widgets.EXTRA_ACTION) == Widgets.ACTION_DELETE) {
+                TaskActions.askDelete(this, task, onChanged = {}, onClosed = { finish() })
+            } else {
+                TaskActions.show(this, task, onChanged = {}, onClosed = { finish() })
+            }
         }
     }
 }

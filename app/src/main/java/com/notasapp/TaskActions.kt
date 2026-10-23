@@ -12,13 +12,13 @@ object TaskActions {
     fun show(activity: Activity, task: Task, onChanged: () -> Unit, onClosed: () -> Unit = {}) {
         val db = Db.get(activity)
         val labels = listOf(
-            if (task.done) "Marcar como pendiente" else "Marcar como realizada",
+            if (task.done) "Marcar como pendente" else "Marcar como feita",
             "Editar",
-            "Cambiar color",
+            "Cambiar a cor",
             "Subir",
-            "Bajar",
-            "Mover a otra pestaña",
-            "Eliminar"
+            "Baixar",
+            "Mover a outra lapela",
+            "Borrar"
         )
         var followUp = false
 
@@ -44,10 +44,15 @@ object TaskActions {
             .show()
     }
 
+    // Borrado directo desde a papeleira de cada tarefa, con confirmación.
+    fun askDelete(activity: Activity, task: Task, onChanged: () -> Unit, onClosed: () -> Unit = {}) {
+        confirmDelete(activity, task, { Widgets.refreshAll(activity); onChanged() }, onClosed)
+    }
+
     private fun choosePriority(activity: Activity, task: Task, changed: () -> Unit, onClosed: () -> Unit) {
         val items = PRIORITY_NAMES.mapIndexed { i, name -> colored("●  $name", PRIORITY_COLORS[i]) }
         AlertDialog.Builder(activity)
-            .setTitle("Color de prioridad")
+            .setTitle("Cor da prioridade")
             .setSingleChoiceItems(items.toTypedArray(), task.priority) { dialog, which ->
                 Db.get(activity).setPriority(task.id, which)
                 changed()
@@ -73,9 +78,9 @@ object TaskActions {
 
     private fun confirmDelete(activity: Activity, task: Task, changed: () -> Unit, onClosed: () -> Unit) {
         AlertDialog.Builder(activity)
-            .setTitle("¿Eliminar la tarea?")
+            .setTitle("Borrar a tarefa?")
             .setMessage(task.text)
-            .setPositiveButton("Eliminar") { _, _ ->
+            .setPositiveButton("Borrar") { _, _ ->
                 Db.get(activity).delete(task.id)
                 changed()
             }

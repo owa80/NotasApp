@@ -10,9 +10,9 @@
         android:layout_height="26dp"
         android:orientation="horizontal">
 
-        <TextView style="@style/WidgetTab" android:background="@drawable/tab_selected" android:text="Trabajo" />
-        <TextView style="@style/WidgetTab" android:layout_marginStart="2dp" android:background="@drawable/tab_normal" android:text="Personal" />
-        <TextView style="@style/WidgetTab" android:layout_marginStart="2dp" android:background="@drawable/tab_normal" android:text="Otros" />
+        <TextView style="@style/WidgetTab" android:background="@drawable/tab_selected" android:text="Traballo" />
+        <TextView style="@style/WidgetTab" android:layout_marginStart="2dp" android:background="@drawable/tab_normal" android:text="Persoal" />
+        <TextView style="@style/WidgetTab" android:layout_marginStart="2dp" android:background="@drawable/tab_normal" android:text="Outros" />
     </LinearLayout>
 
     <LinearLayout
@@ -23,8 +23,8 @@
         android:orientation="vertical"
         android:padding="8dp">
 
-        <TextView style="@style/PreviewRow" android:drawableStart="@drawable/dot_red" android:text="Enviar informe" />
-        <TextView style="@style/PreviewRow" android:drawableStart="@drawable/dot_yellow" android:text="Llamar al cliente" />
-        <TextView style="@style/PreviewRow" android:drawableStart="@drawable/dot_green" android:text="Ordenar correo" />
+        <TextView style="@style/PreviewRow" android:drawableStart="@drawable/dot_red" android:text="Enviar o informe" />
+        <TextView style="@style/PreviewRow" android:drawableStart="@drawable/dot_yellow" android:text="Chamar ao cliente" />
+        <TextView style="@style/PreviewRow" android:drawableStart="@drawable/dot_green" android:text="Ordenar o correo" />
     </LinearLayout>
 </LinearLayout>

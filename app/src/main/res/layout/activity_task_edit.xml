@@ -10,7 +10,7 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nueva tarea"
+        android:text="Nova tarefa"
         android:textColor="@color/ink"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -27,7 +27,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Escribe la tarea"
+            android:hint="Escribe a tarefa"
             android:inputType="textCapSentences|textMultiLine"
             android:maxLines="5"
             android:textColor="@color/ink" />
@@ -38,13 +38,13 @@
             android:layout_height="48dp"
             android:layout_marginStart="8dp"
             android:background="@drawable/button_round"
-            android:contentDescription="Dictar tarea"
+            android:contentDescription="Ditar tarefa"
             android:src="@drawable/ic_mic" />
     </LinearLayout>
 
     <TextView
         style="@style/FormLabel"
-        android:text="Prioridad" />
+        android:text="Prioridade" />
 
     <RadioGroup
         android:id="@+id/priority_group"
@@ -54,12 +54,12 @@
 
         <RadioButton android:id="@+id/prio_high" style="@style/FormChoice" android:text="Alta" />
         <RadioButton android:id="@+id/prio_medium" style="@style/FormChoice" android:text="Media" />
-        <RadioButton android:id="@+id/prio_low" style="@style/FormChoice" android:text="Baja" />
+        <RadioButton android:id="@+id/prio_low" style="@style/FormChoice" android:text="Baixa" />
     </RadioGroup>
 
     <TextView
         style="@style/FormLabel"
-        android:text="Pestaña" />
+        android:text="Lapela" />
 
     <RadioGroup
         android:id="@+id/tab_group"
@@ -67,9 +67,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <RadioButton android:id="@+id/tab_work" style="@style/FormChoice" android:text="Trabajo" />
-        <RadioButton android:id="@+id/tab_personal" style="@style/FormChoice" android:text="Personal" />
-        <RadioButton android:id="@+id/tab_other" style="@style/FormChoice" android:text="Otros" />
+        <RadioButton android:id="@+id/tab_work" style="@style/FormChoice" android:text="Traballo" />
+        <RadioButton android:id="@+id/tab_personal" style="@style/FormChoice" android:text="Persoal" />
+        <RadioButton android:id="@+id/tab_other" style="@style/FormChoice" android:text="Outros" />
     </RadioGroup>
 
     <LinearLayout
@@ -92,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="Guardar"
+            android:text="Gardar"
             android:textColor="@color/ink" />
     </LinearLayout>
 </LinearLayout>

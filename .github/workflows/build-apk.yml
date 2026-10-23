@@ -42,6 +42,6 @@ jobs:
         with:
           tag_name: v1.0.${{ github.run_number }}
           name: NotasApp 1.0.${{ github.run_number }}
-          body: Descarga NotasApp.apk desde el móvil e instálalo.
+          body: Descarga NotasApp.apk desde o móbil e instálao.
           files: NotasApp.apk
           make_latest: true

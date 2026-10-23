@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Arrastra el dedo sobre la rejilla para elegir cuántos iconos ocupa el post-it (columnas x filas). Tamaños: 2x2, 2x3, 3x2, 3x3 y 3x4."
+        android:text="Arrastra o dedo sobre a grella para escoller cantas iconas ocupa o pósit (columnas x filas). Tamaños: 2x2, 2x3, 3x2, 3x3 e 3x4."
         android:textColor="@color/ink"
         android:textSize="15sp" />
 
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Colocar en la pantalla de inicio"
+        android:text="Colocar na pantalla de inicio"
         android:textAllCaps="false"
         android:textColor="@color/ink" />
 
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Android deja que el lanzador elija el hueco libre. Si no queda arriba a la derecha, mantén pulsado el post-it y arrástralo a esa esquina."
+        android:text="Android deixa que o lanzador escolla o oco libre. Se non queda arriba á dereita, mantén premido o pósit e arrástrao a esa esquina."
         android:textColor="#8D6E63"
         android:textSize="13sp" />
 </LinearLayout>

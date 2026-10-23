@@ -1,40 +1,42 @@
 # NotasApp
 
-App Android nativa (Kotlin + SQLite) con un widget tipo post-it amarillo para las
-tareas pendientes, organizado en tres pestañas: Trabajo, Personal y Otros.
+App Android nativa (Kotlin + SQLite) cun widget tipo pósit amarelo para as tarefas
+pendentes, organizado en tres lapelas: Traballo, Persoal e Outros. A interface está en galego.
 
-## Funciones
+## Funcións
 
-- Widget de pantalla de inicio en 5 tamaños (columnas x filas): 2x2, 2x3, 3x2, 3x3 y 3x4.
-- En la app, el botón **Poner el post-it en la pantalla de inicio** abre una rejilla:
-  arrastra el dedo para elegir el tamaño, como al insertar una tabla en Office, y pulsa
-  **Colocar**. La rejilla crece desde la esquina superior derecha.
-- Tareas con prioridad por color: rojo (alta), amarillo (media) y verde (baja).
-- Las tareas se colocan por orden de entrada, de arriba hacia abajo.
-- Toca la casilla de una tarea para marcarla como realizada (queda tachada).
-- Toca el texto de una tarea para: editar, cambiar el color, subir, bajar, moverla a otra
-  pestaña o eliminarla. En la app también se puede arrastrar desde el asa ☰ para reordenar.
-- Nueva tarea con el botón **+** (escribir) o con el **micrófono** (dictado por voz en español).
+- Widget da pantalla de inicio en 5 tamaños (columnas x filas): 2x2, 2x3, 3x2, 3x3 e 3x4.
+- Na app, o botón **Poñer o pósit na pantalla de inicio** abre unha grella: arrastra o dedo
+  para escoller o tamaño, como ao inserir unha táboa en Office, e preme **Colocar**.
+- Tarefas con prioridade por cor: vermello (alta), amarelo (media) e verde (baixa).
+- As tarefas colócanse por orde de entrada, de arriba abaixo.
+- Na propia lista do pósit, cada tarefa ten:
+  - unha caixa para marcala como feita (queda riscada),
+  - unha papeleira para borrala (pide confirmación).
+- Ao tocar o texto dunha tarefa: editar, cambiar a cor, subir, baixar, movela a outra
+  lapela ou borrala. Na app tamén se pode arrastrar desde a asa ☰ para reordenar, e o menú
+  **Borrar as feitas** limpa as tarefas rematadas da lapela.
+- Nova tarefa co botón **+** (escribir) ou co **micrófono** (ditado por voz en galego).
 
-## Obtener el .apk sin Android Studio
+## Obter o .apk sen Android Studio
 
-1. GitHub compila la app en cada push a `main` y en cada PR.
-2. Entra en la pestaña **Actions** del repositorio, abre la última ejecución y descarga el artefacto `NotasApp-apk`.
-3. En las versiones publicadas en `main`, el .apk también aparece en **Releases**.
-4. Copia el .apk al móvil y ábrelo. Android pedirá permiso para instalar apps desconocidas la primera vez.
+1. GitHub compila a app en cada push a `main` e en cada PR.
+2. Na lapela **Actions** do repositorio, abre a última execución e descarga o artefacto `NotasApp-apk`.
+3. Nas versións publicadas en `main`, o .apk tamén aparece en **Releases**.
+4. Copia o .apk ao móbil e ábreo. Android pedirá permiso para instalar apps descoñecidas a primeira vez.
 
-El .apk se firma con una clave de depuración fija incluida en el repositorio, así que cada versión nueva se instala encima de la anterior.
+O .apk asínase cunha clave de depuración fixa incluída no repositorio, así que cada versión nova instálase enriba da anterior sen perder as tarefas.
 
-## Limitaciones de Android
+## Limitacións de Android
 
-- Android no deja a una app elegir la posición exacta del widget: el lanzador lo pone en
-  el primer hueco libre. Si no queda arriba a la derecha, mantenlo pulsado y arrástralo allí.
-- El dictado usa el reconocimiento de voz del móvil (Google). Si no está instalado, la app lo avisa.
+- Android non deixa a unha app escoller a posición exacta do widget: o lanzador pono no
+  primeiro oco libre. Se non queda arriba á dereita, mantelo premido e arrástrao alí.
+- O ditado usa o recoñecemento de voz do móbil (Google) en galego (gl-ES).
 
-## Estructura
+## Estrutura
 
-- `app/src/main/java/com/notasapp/Db.kt`: base de datos SQLite (tabla `tasks`).
-- `app/src/main/java/com/notasapp/Widget.kt`: widget, sus 5 tamaños y la lista del post-it.
-- `app/src/main/java/com/notasapp/TaskActions.kt`: menú de acciones de una tarea.
+- `app/src/main/java/com/notasapp/Db.kt`: base de datos SQLite (táboa `tasks`).
+- `app/src/main/java/com/notasapp/Widget.kt`: widget, os seus 5 tamaños e a lista do pósit.
+- `app/src/main/java/com/notasapp/TaskActions.kt`: menú de accións dunha tarefa.
 - `app/src/main/java/com/notasapp/*Activity.kt`: pantallas (lista, alta/edición, selector de tamaño).
 - `.github/workflows/build-apk.yml`: compilación automática.
