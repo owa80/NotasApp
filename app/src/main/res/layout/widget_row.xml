@@ -28,17 +28,6 @@
         android:textSize="13sp" />
 
     <ImageView
-        android:id="@+id/delete"
-        android:layout_width="26dp"
-        android:layout_height="30dp"
-        android:contentDescription="Borrar"
-        android:paddingStart="3dp"
-        android:paddingTop="6dp"
-        android:paddingEnd="3dp"
-        android:paddingBottom="6dp"
-        android:src="@drawable/ic_delete" />
-
-    <ImageView
         android:id="@+id/check"
         android:layout_width="30dp"
         android:layout_height="30dp"

@@ -95,10 +95,6 @@ class Db private constructor(context: Context) :
         writableDatabase.delete("tasks", "id = ?", arrayOf(id.toString()))
     }
 
-    fun deleteDone(tab: Int) {
-        writableDatabase.delete("tasks", "tab = ? AND done = 1", arrayOf(tab.toString()))
-    }
-
     // Sube (delta = -1) o baja (delta = 1) una tarea un puesto dentro de su pestaña.
     fun move(id: Long, delta: Int) {
         val task = task(id) ?: return

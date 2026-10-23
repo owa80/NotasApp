@@ -10,12 +10,9 @@ pendentes, organizado en tres lapelas: Traballo, Persoal e Outros. A interface e
   para escoller o tamaño, como ao inserir unha táboa en Office, e preme **Colocar**.
 - Tarefas con prioridade por cor: vermello (alta), amarelo (media) e verde (baixa).
 - As tarefas colócanse por orde de entrada, de arriba abaixo.
-- Na propia lista do pósit, cada tarefa ten:
-  - unha caixa para marcala como feita (queda riscada),
-  - unha papeleira para borrala (pide confirmación).
-- Ao tocar o texto dunha tarefa: editar, cambiar a cor, subir, baixar, movela a outra
-  lapela ou borrala. Na app tamén se pode arrastrar desde a asa ☰ para reordenar, e o menú
-  **Borrar as feitas** limpa as tarefas rematadas da lapela.
+- Toca a caixa dunha tarefa para marcala como feita (queda riscada).
+- Toca o texto ou o círculo de cor dunha tarefa para: editar, cambiar a cor, subir, baixar,
+  movela a outra lapela ou borrala. Na app tamén se pode arrastrar desde a asa ☰ para reordenar.
 - Nova tarefa co botón **+** (escribir) ou co **micrófono** (ditado por voz en galego).
 
 ## Obter o .apk sen Android Studio

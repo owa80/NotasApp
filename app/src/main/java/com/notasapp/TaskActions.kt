@@ -44,11 +44,6 @@ object TaskActions {
             .show()
     }
 
-    // Borrado directo desde a papeleira de cada tarefa, con confirmación.
-    fun askDelete(activity: Activity, task: Task, onChanged: () -> Unit, onClosed: () -> Unit = {}) {
-        confirmDelete(activity, task, { Widgets.refreshAll(activity); onChanged() }, onClosed)
-    }
-
     private fun choosePriority(activity: Activity, task: Task, changed: () -> Unit, onClosed: () -> Unit) {
         val items = PRIORITY_NAMES.mapIndexed { i, name -> colored("●  $name", PRIORITY_COLORS[i]) }
         AlertDialog.Builder(activity)

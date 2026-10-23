@@ -2,13 +2,10 @@ package com.notasapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -43,7 +40,6 @@ class MainActivity : AppCompatActivity() {
                 Widgets.refreshAll(this)
                 refresh()
             },
-            onDelete = { TaskActions.askDelete(this, it, onChanged = { refresh() }) },
             onStartDrag = { touchHelper.startDrag(it) }
         )
         val list = findViewById<RecyclerView>(R.id.list)
@@ -78,35 +74,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menu.add(0, MENU_CLEAR_DONE, 0, "Borrar as feitas")
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId != MENU_CLEAR_DONE) return super.onOptionsItemSelected(item)
-        val tab = currentTab
-        val count = Db.get(this).tasks(tab).count { it.done }
-        if (count == 0) {
-            AlertDialog.Builder(this)
-                .setMessage("Non hai tarefas feitas en ${TAB_NAMES[tab]}.")
-                .setPositiveButton("Entendido", null)
-                .show()
-        } else {
-            AlertDialog.Builder(this)
-                .setTitle("Borrar as tarefas feitas?")
-                .setMessage("Borraranse $count tarefas feitas de ${TAB_NAMES[tab]}.")
-                .setPositiveButton("Borrar") { _, _ ->
-                    Db.get(this).deleteDone(tab)
-                    Widgets.refreshAll(this)
-                    refresh()
-                }
-                .setNegativeButton("Cancelar", null)
-                .show()
-        }
-        return true
-    }
-
     override fun onResume() {
         super.onResume()
         refresh()
@@ -115,9 +82,5 @@ class MainActivity : AppCompatActivity() {
     private fun refresh() {
         adapter.submit(Db.get(this).tasks(currentTab))
         empty.visibility = if (adapter.items.isEmpty()) View.VISIBLE else View.GONE
-    }
-
-    companion object {
-        private const val MENU_CLEAR_DONE = 1
     }
 }

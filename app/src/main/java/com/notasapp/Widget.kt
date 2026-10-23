@@ -56,7 +56,6 @@ object Widgets {
     const val EXTRA_ACTION = "action"
     const val ACTION_TOGGLE = "toggle"
     const val ACTION_MENU = "menu"
-    const val ACTION_DELETE = "delete"
 
     // Tamaños disponibles (columnas x filas) y el proveedor de cada uno.
     val SIZES: Map<Pair<Int, Int>, Class<out NotasWidget>> = linkedMapOf(
@@ -183,7 +182,6 @@ class NotasWidgetService : RemoteViewsService() {
             views.setImageViewResource(R.id.check, if (task.done) R.drawable.ic_check_on else R.drawable.ic_check_off)
 
             views.setOnClickFillInIntent(R.id.check, fillIn(task.id, Widgets.ACTION_TOGGLE))
-            views.setOnClickFillInIntent(R.id.delete, fillIn(task.id, Widgets.ACTION_DELETE))
             views.setOnClickFillInIntent(R.id.text, fillIn(task.id, Widgets.ACTION_MENU))
             views.setOnClickFillInIntent(R.id.dot, fillIn(task.id, Widgets.ACTION_MENU))
             return views
